@@ -5,6 +5,6 @@ n6checker
 
 ##### Installation instructions
 
-1. git clone git@github.com/vikrambodicherla:n6checker.git
+1. git clone git@github.com:vikrambodicherla/n6checker.git
 2. chmod +x install_n6checker.sh
 3. ./install_n6checker.sh
