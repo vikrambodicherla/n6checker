@@ -1,0 +1,29 @@
+blue32=$(curl --user-agent "fogent" --silent "https://play.google.com/store/devices/details/Nexus_6_32GB_Midnight_Blue?id=nexus_6_blue_32gb"| grep -o "We are out of inventory")
+
+blue64=$(curl --user-agent "fogent" --silent "https://play.google.com/store/devices/details/Nexus_6_64GB_Midnight_Blue?id=nexus_6_blue_64gb"| grep -o "We are out of inventory")
+
+white32=$(curl --user-agent "fogent" --silent "https://play.google.com/store/devices/details/Nexus_6_32GB_Cloud_White?id=nexus_6_white_32gb"| grep -o "We are out of inventory")
+
+white64=$(curl --user-agent "fogent" --silent "https://play.google.com/store/devices/details/Nexus_6_32GB_Cloud_White?id=nexus_6_white_64gb"| grep -o "We are out of inventory")
+
+if [ -z "$blue32" ]; then
+	avail="Blue 32GB"
+fi
+
+if [ -z "$blue64" ]; then
+	avail="$avail Blue 64GB"
+fi
+
+if [ -z "$white32" ]; then
+	avail="$avail White 32GB"
+fi
+
+if [ -z "$white64" ]; then
+	avail="$avail White 64GB"
+fi
+
+if [ -n "$avail" ]; then
+	echo $avail
+	osascript -e "display alert \"Availabile N6 devices\" message \"$avail\""
+fi
+	
