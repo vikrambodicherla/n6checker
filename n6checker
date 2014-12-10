@@ -24,6 +24,6 @@ fi
 
 if [ -n "$avail" ]; then
 	echo $avail
-	osascript -e "display alert \"Availabile N6 devices\" message \"$avail\""
+	osascript -e "tell application \"Finder\"" -e "activate" -e "display alert \"Availabile N6 devices\" message \"$avail\"" -e "end tell"
 fi
 	
